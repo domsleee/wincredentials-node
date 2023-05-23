@@ -1957,7 +1957,7 @@ __metadata:
   linkType: hard
 
 "wincredentials-node@workspace:.":
-  version: 1.0.1-use.local
+  version: 0.0.0-use.local
   resolution: "wincredentials-node@workspace:."
   dependencies:
     "@napi-rs/cli": ^2.15.2
