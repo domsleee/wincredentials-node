@@ -1,6 +1,6 @@
 {
   "name": "wincredentials-node",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Native node bindings to modify credentials stored in Control Panel > Credential Manager.",
   "main": "index.js",
   "repository": "git@github.com:domsleee/wincredentials-node.git",
