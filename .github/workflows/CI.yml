@@ -1,7 +1,7 @@
 name: CI
 env:
   DEBUG: napi:*
-  APP_NAME: package-template
+  APP_NAME: wincredentials-node
   MACOSX_DEPLOYMENT_TARGET: '10.13'
 'on':
   push:
@@ -16,9 +16,6 @@ env:
       - .editorconfig
       - docs/**
   pull_request: null
-concurrency:
-  group: ${{ github.workflow }}-${{ github.ref }}
-  cancel-in-progress: true
 jobs:
   build:
     strategy:
@@ -102,7 +99,7 @@ jobs:
           name: bindings-${{ matrix.settings.target }}
           path: ${{ env.APP_NAME }}.*.node
           if-no-files-found: error
-  test-windows-binding:
+  test-macOS-windows-binding:
     name: Test bindings on ${{ matrix.settings.target }} - node@${{ matrix.node }}
     needs:
       - build
@@ -141,7 +138,7 @@ jobs:
     name: Publish
     runs-on: ubuntu-latest
     needs:
-      - test-windows-binding
+      - test-macOS-windows-binding
     steps:
       - uses: actions/checkout@v3
       - name: Setup node

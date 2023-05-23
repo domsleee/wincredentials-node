@@ -1,6 +1,6 @@
 import test from 'ava'
 
-import { deleteCredential, readCredential, writeCredential } from '../index'
+import { deleteCredential, readCredential, writeCredential } from '../index.js'
 
 test('reading and writing credentials', (t) => {
   writeCredential('wincredentials-node', 'myUsername', 'mySecret')
